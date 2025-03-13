@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="VisualWebInstruct: Scaling up Multimodal Instruction Data through Web Search">
+    <meta property="og:title" content="VisualWebInstruct: Scaling up Multimodal Instruction Data through Web Search" />
+    <meta property="og:description" content="We propose an approach to scale up multimodal reasoing dataset" />
+    <meta property="og:url" content="https://github.com/TIGER-AI-Lab/VisualWebInstruct" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <title>VisualWebInstruct: Scaling up Multimodal Instruction Data through Web Search</title>
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">
+                            VisualWebInstruct: Scaling up Multimodal Instruction Data through Web Search
+                        </h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                Yiming Jia,
+                            </span>
+                            <span class="author-block">
+                                 Jiachen Li,
+                            </span>
+                            <span class="author-block">
+                                Xiang Yue,
+                            </span>,
+                            <span class="author-block">
+                                Bo Li
+                            </span>,
+                            <span class="author-block">
+                                Ping Nie
+                            </span>,
+                            <span class="author-block">
+                               Kai Zou,
+                            </span>
+                            <span class="author-block">
+                               Wenhu Chen
+                            </span>
+                        </div>
+
+                        
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <sup>♠️</sup>University of Waterloo,
+                            </span>
+                            <br>
+                            <span class="author-block">Corresponding to:</span>
+                            <span class="author-block"><a href="mailto:yiming.jia@mail.utoronto.ca">yiming.jia@mail.utoronto.ca</a>,</span>
+                            <span class="author-block"><a href="mailto:wenhuchen@uwaterloo.ca">wenhuchen@uwaterloo.ca</a></span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- GitHub link -->
+                                <span class="link-block">
+                                    <a href="https://github.com/TIGER-AI-Lab/VisualWebInstruct" target="_blank"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fab fa-github"></i>
+                                    </span>
+                                    <span>Code</span>
+                                    </a>
+                                </span>
+
+                                <span class="link-block">
+                                    <a href="#" target="_blank"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="ai ai-arxiv"></i>
+                                    </span>
+                                    <span>Paper</span>
+                                    </a>
+                                </span>
+
+                                <span class="link-block">
+                                  <a href="https://huggingface.co/datasets/TIGER-Lab/VisualWebInstruct-Seed" target="_blank"
+                                  class="external-link button is-normal is-rounded is-dark">
+                                      <span class="icon">
+                                        🤗
+                                      </span>
+                                      <span>Seed Data</span>
+                                  </a>
+                                </span>
+
+                                <span class="link-block">
+                                  <a href="https://huggingface.co/datasets/TIGER-Lab/VisualWebInstruct-Recall" target="_blank"
+                                  class="external-link button is-normal is-rounded is-dark">
+                                      <span class="icon">
+                                        🤗
+                                      </span>
+                                      <span>Recalled Data</span>
+                                  </a>
+                                </span>
+
+                                <span class="link-block">
+                                  <a href="https://huggingface.co/datasets/TIGER-Lab/VisualWebInstruct" target="_blank"
+                                  class="external-link button is-normal is-rounded is-dark">
+                                      <span class="icon">
+                                        🤗
+                                      </span>
+                                      <span>VisualWebInstruct</span>
+                                  </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container" style="margin-bottom: 2vh;margin-top: -6vh;">
+          <!-- Abstract. -->
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Introduction</h2>
+              <div class="content has-text-justified">
+                <p>
+                    Vision-Language Models have made significant progress on perceptual tasks, however, their progress on reasoning-focused tasks seem to be limited due to the lack of high-quality data. In this work, we aim to address the scarcity issue of reasoning-focused multimodal datasets. We propose VisualWebInstruct—a novel approach that leverages search engine to create a diverse, and high-quality dataset spanning multiple disciplines. Starting with 30,000 seed images across fields including Math, Physics, Accounting, Chemistry, etc. We employ Google Image search to identify websites containing similar images, collecting and processing 758,490 unique URL sources. Through a pipeline of content extraction, filtering and synthesis, we build a dataset of approximately 900K question-answer pairs, with 40% being visual QA pairs. Models fine-tuned on VisualWebInstruct demonstrate significant performance improvements: Llava-OV-mid shows 10-20% absolute point gains across benchmarks, while our MAmmoTH-VL2 model achieves state-of-the-art performance within the 10B parameter class on MMMU-Pro-std (40.7%), MathVerse (42.6%), and DynaMath (55.7%). These results highlight VisualWebInstruct's effectiveness in enhancing VLMs' reasoning capabilities for complex multimodal tasks.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--/ Abstract. -->
+      </div>
+      </section>
+
+    <section class="hero is-light is-small">
+        <div class="hero-body has-text-centered">
+          <h1 class="title is-1 acecoder">
+              🂡
+            <span class="acecoder">VisualWebInstruct</span>
+          </h1>
+        </div>
+    </section>
+
+
+    <!-- BibTeX citation -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">Reference</h2>
+            Please kindly cite our paper if you use our code or results:
+            <pre><code>
+                
+            </code></pre>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content has-text-centered">
+                        <p>
+                            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
