@@ -1,8 +1,6 @@
 # VisualWebInstruct
 The official repo for [VisualWebInstruct: Scaling up Multimodal Instruction Data through Web Search](https://arxiv.org/abs/2503.10582).
 
-<img width="1432" alt="abs" src="teaser.jpg">
-
 <a target="_blank" href="https://arxiv.org/abs/2503.10582">
 <img style="height:22pt" src="https://img.shields.io/badge/-Paper-black?style=flat&logo=arxiv">
 </a>
@@ -15,6 +13,11 @@ The official repo for [VisualWebInstruct: Scaling up Multimodal Instruction Data
 <img style="height:22pt" src="https://img.shields.io/badge/-🤗%20Models-red?style=flat">
 </a>
 <br>
+
+## Overview
+We utilize Google Search as a tool to augment multimodal reasoning dataset:
+<img width="800" alt="abs" src="teaser.jpg">
+
 
 
 ## Introduction
