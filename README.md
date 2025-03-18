@@ -12,7 +12,13 @@ The official repo for [VisualWebInstruct: Scaling up Multimodal Instruction Data
 <a target="_blank" href="https://huggingface.co/TIGER-Lab/MAmmoTH-VL2">
 <img style="height:22pt" src="https://img.shields.io/badge/-🤗%20Models-red?style=flat">
 </a>
+
+<a target="_blank" href="https://tiger-ai-lab.github.io/VisualWebInstruct/">
+<img style="height:22pt" src="https://img.shields.io/badge/-📝%20Website-red?style=flat">
+</a>
+
 <br>
+
 
 ## Overview
 We utilize Google Search as a tool to augment multimodal reasoning dataset:
