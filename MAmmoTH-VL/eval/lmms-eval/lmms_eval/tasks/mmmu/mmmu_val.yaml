@@ -16,7 +16,6 @@ metric_list:
 lmms_eval_specific_kwargs:
   default:
     prompt_type: "format"
-    multiple_choice_prompt: "Answer with the option's letter from the given choices directly."
-    open_ended_prompt: "Answer the question using a single word or phrase."
-
+    multiple_choice_prompt: "Write your final answer directly in the format 'Answer: X' where X is the option's letter from the given choices. If the answer is not in the choices, please give the closest option."
+    open_ended_prompt: "Write your final answer directly in the format 'Answer: X' where X is a single word or phrase that answers the question."
 include: _default_template_yaml
