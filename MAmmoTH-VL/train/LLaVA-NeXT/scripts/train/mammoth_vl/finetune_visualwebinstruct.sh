@@ -4,24 +4,17 @@ export NCCL_IB_GID_INDEX=3
 export NCCL_SOCKET_IFNAME=eth0
 export NCCL_DEBUG=INFO
 
-
 LLM_VERSION="Qwen/Qwen2.5-7B-Instruct"
 LLM_VERSION_CLEAN="${LLM_VERSION//\//_}"
 VISION_MODEL_VERSION="google/siglip-so400m-patch14-384"
 VISION_MODEL_VERSION_CLEAN="${VISION_MODEL_VERSION//\//_}"
-
-############### Pretrain ################
-cd your_path/LLaVA-NeXT
-source your_path/miniconda3/bin/activate llava
 
 export HF_HOME=xxx
 
 WANDB_API_KEY=xxx
 wandb login --relogin $WANDB_API_KEY
 
-
 PROMPT_VERSION="qwen_2_5"
-
 
 BASE_RUN_NAME=xxx
 echo "BASE_RUN_NAME: ${BASE_RUN_NAME}"
