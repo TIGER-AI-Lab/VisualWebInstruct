@@ -33,7 +33,7 @@ ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node="${NUM_GPUS}" --nnodes="${NN
     --deepspeed scripts/zero3.json \
     --model_name_or_path ${CKPT_PATH} \
     --version ${PROMPT_VERSION} \
-    --data_path LLaVA-NeXT/scripts/train/mammoth_vl/onevision.yaml \
+    --data_path LLaVA-NeXT/scripts/train/mammoth_vl/visualwebinstruct.yaml \
     --image_folder xxx \
     --video_folder xxx \
     --mm_tunable_parts="mm_vision_tower,mm_mlp_adapter,mm_language_model" \
