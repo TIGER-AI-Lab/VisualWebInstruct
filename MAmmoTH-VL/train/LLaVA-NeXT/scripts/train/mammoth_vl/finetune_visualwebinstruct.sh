@@ -1,34 +1,20 @@
-export OMP_NUM_THREADS=8
-export NCCL_IB_DISABLE=0
-export NCCL_IB_GID_INDEX=3
-export NCCL_SOCKET_IFNAME=eth0
-export NCCL_DEBUG=INFO
+#!/bin/bash
 
-LLM_VERSION="Qwen/Qwen2.5-7B-Instruct"
-LLM_VERSION_CLEAN="${LLM_VERSION//\//_}"
-VISION_MODEL_VERSION="google/siglip-so400m-patch14-384"
-VISION_MODEL_VERSION_CLEAN="${VISION_MODEL_VERSION//\//_}"
+# This script assumes all environment variables have been set beforehand according to the README
+# It directly runs the training command using those variables
 
-export HF_HOME=xxx
-
-WANDB_API_KEY=xxx
-wandb login --relogin $WANDB_API_KEY
-
-PROMPT_VERSION="qwen_2_5"
-
-BASE_RUN_NAME=xxx
 echo "BASE_RUN_NAME: ${BASE_RUN_NAME}"
 
-CKPT_PATH=$LLM_VERSION # this could also be the previous stage checkpoint
 
+# Run the training
 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node="${NUM_GPUS}" --nnodes="${NNODES}" --node_rank="${RANK}" --master_addr="${ADDR}" --master_port="${PORT}" \
     llava/train/train_mem.py \
     --deepspeed scripts/zero3.json \
     --model_name_or_path ${CKPT_PATH} \
     --version ${PROMPT_VERSION} \
-    --data_path LLaVA-NeXT/scripts/train/mammoth_vl/visualwebinstruct.yaml \
-    --image_folder xxx \
-    --video_folder xxx \
+    --data_path scripts/train/mammoth_vl/visualwebinstruct.yaml \
+    --image_folder ${IMAGE_FOLDER} \
+    --video_folder "" \
     --mm_tunable_parts="mm_vision_tower,mm_mlp_adapter,mm_language_model" \
     --mm_vision_tower_lr=2e-6 \
     --vision_tower ${VISION_MODEL_VERSION} \
@@ -42,7 +28,7 @@ ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node="${NUM_GPUS}" --nnodes="${NN
     --mm_patch_merge_type spatial_unpad \
     --bf16 True \
     --run_name $BASE_RUN_NAME \
-    --output_dir xxx \
+    --output_dir ${OUTPUT_DIR} \
     --num_train_epochs 1 \
     --per_device_train_batch_size 1 \
     --per_device_eval_batch_size 4 \

@@ -1,0 +1,171 @@
+{
+  "os": "Linux-6.8.0-51-generic-x86_64-with-glibc2.35",
+  "python": "3.10.16",
+  "startedAt": "2025-03-23T07:02:25.446684Z",
+  "args": [
+    "--deepspeed",
+    "scripts/zero3.json",
+    "--model_name_or_path",
+    "/data/yiming/data/qwen_MAmmoTH-VL-8B",
+    "--version",
+    "qwen_2_5",
+    "--data_path",
+    "scripts/train/mammoth_vl/visualwebinstruct.yaml",
+    "--image_folder",
+    "/data/yiming/data/data_visualwebinstruct/imgs",
+    "--video_folder",
+    "",
+    "--mm_tunable_parts=mm_vision_tower,mm_mlp_adapter,mm_language_model",
+    "--mm_vision_tower_lr=2e-6",
+    "--vision_tower",
+    "google/siglip-so400m-patch14-384",
+    "--mm_projector_type",
+    "mlp2x_gelu",
+    "--mm_vision_select_layer",
+    "-2",
+    "--mm_use_im_start_end",
+    "False",
+    "--mm_use_im_patch_token",
+    "False",
+    "--group_by_modality_length",
+    "True",
+    "--image_aspect_ratio",
+    "anyres_max_4",
+    "--image_grid_pinpoints",
+    "(1x1),...,(6x6)",
+    "--mm_patch_merge_type",
+    "spatial_unpad",
+    "--bf16",
+    "True",
+    "--run_name",
+    "VisualWebInstruct_mammoth_vl",
+    "--output_dir",
+    "/data/yiming/data/output5",
+    "--num_train_epochs",
+    "1",
+    "--per_device_train_batch_size",
+    "1",
+    "--per_device_eval_batch_size",
+    "4",
+    "--gradient_accumulation_steps",
+    "2",
+    "--evaluation_strategy",
+    "no",
+    "--save_strategy",
+    "steps",
+    "--save_steps",
+    "1000",
+    "--save_total_limit",
+    "20",
+    "--learning_rate",
+    "1e-5",
+    "--weight_decay",
+    "0.",
+    "--warmup_ratio",
+    "0.03",
+    "--lr_scheduler_type",
+    "cosine",
+    "--logging_steps",
+    "1",
+    "--tf32",
+    "True",
+    "--model_max_length",
+    "8192",
+    "--gradient_checkpointing",
+    "True",
+    "--dataloader_num_workers",
+    "4",
+    "--lazy_preprocess",
+    "True",
+    "--report_to",
+    "wandb",
+    "--torch_compile",
+    "True",
+    "--torch_compile_backend",
+    "inductor",
+    "--dataloader_drop_last",
+    "True",
+    "--frames_upbound",
+    "32"
+  ],
+  "program": "/data/yiming/VisualWebInstruct/VisualWebInstruct/MAmmoTH-VL/train/LLaVA-NeXT/llava/train/train_mem.py",
+  "codePath": "MAmmoTH-VL/train/LLaVA-NeXT/llava/train/train_mem.py",
+  "git": {
+    "remote": "https://github.com/TIGER-AI-Lab/VisualWebInstruct.git",
+    "commit": "8f43c1d2df8816f3d5b4944d1a45e0be6877ecff"
+  },
+  "email": "jiayiming711@gmail.com",
+  "root": "/data/yiming/VisualWebInstruct/VisualWebInstruct/MAmmoTH-VL/train/LLaVA-NeXT",
+  "host": "d24503cac55e",
+  "username": "user",
+  "executable": "/home/user/miniconda3/envs/train/bin/python",
+  "codePathLocal": "llava/train/train_mem.py",
+  "cpu_count": 252,
+  "cpu_count_logical": 252,
+  "gpu": "NVIDIA A100 80GB PCIe",
+  "gpu_count": 8,
+  "disk": {
+    "/": {
+      "total": "6923130552320",
+      "used": "5026003267584"
+    }
+  },
+  "memory": {
+    "total": "1014469914624"
+  },
+  "cpu": {
+    "count": 252,
+    "countLogical": 252
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA A100 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    },
+    {
+      "name": "NVIDIA A100 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    },
+    {
+      "name": "NVIDIA A100 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    },
+    {
+      "name": "NVIDIA A100 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    },
+    {
+      "name": "NVIDIA A100 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    },
+    {
+      "name": "NVIDIA A100 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    },
+    {
+      "name": "NVIDIA A100 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    },
+    {
+      "name": "NVIDIA A100 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    }
+  ],
+  "cudaVersion": "12.2"
+}
