@@ -264,9 +264,6 @@ cd -
 
 ### Setup Environment
 Enter the evaluation folder.
-```bash
-cd MAmmoTH-VL/eval
-```
 
 ```bash
 # Required environment variables
