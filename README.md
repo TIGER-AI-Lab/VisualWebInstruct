@@ -267,13 +267,16 @@ Enter the evaluation folder.
 
 ```bash
 # Required environment variables
-export HF_HOME=<your_huggingface_cache_path>
 export HF_TOKEN=<your_huggingface_token>
-export MLP_WORKER_0_PORT=<worker_port_number>
 export OPENAI_API_KEY=<your_openai_api_key>
 export MODEL_PATH=TIGER-Lab/MAmmoTH-VL2
 export TASK_NAME=mmmu_pro_standard
 export OUTPUT_PATH=./log/
+
+export VLLM_WORKER_MULTIPROC_METHOD=spawn
+export NCCL_BLOCKING_WAIT=1
+export NCCL_TIMEOUT=18000000
+export NCCL_DEBUG=DEBUG
 ```
 
 To evaluate the model:
