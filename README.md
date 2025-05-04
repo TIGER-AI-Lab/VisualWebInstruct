@@ -255,10 +255,10 @@ uv venv eval
 uv venv --python 3.12
 source eval/bin/activate
 cd MAmmoTH-VL/train/LLaVA-NeXT/
-pip install -e .
+uv pip install -e .
 cd -
 cd MAmmoTH-VL/eval/lmms-eval
-pip install -e .
+uv pip install -e .
 ```
 
 ### Setup Environment
