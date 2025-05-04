@@ -274,9 +274,9 @@ export HF_HOME=<your_huggingface_cache_path>
 export HF_TOKEN=<your_huggingface_token>
 export MLP_WORKER_0_PORT=<worker_port_number>
 export OPENAI_API_KEY=<your_openai_api_key>
-export MODEL_PATH=<model_path_or_huggingface_id>
-export TASK_NAME=<task_name>  
-export OUTPUT_PATH=<results_output_path>
+export MODEL_PATH=TIGER-Lab/MAmmoTH-VL2
+export TASK_NAME=mmmu_pro_standard
+export OUTPUT_PATH=./log/
 ```
 
 To evaluate the model:
