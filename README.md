@@ -171,7 +171,11 @@ wandb login --relogin $WANDB_API_KEY
 ```
 
 ### Run Training
+```bash
+cd train/LLaVA-NeXT
+```
 
+You can run from commandline:
 ```bash
 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node="${NUM_GPUS}" --nnodes="${NNODES}" --node_rank="${RANK}" --master_addr="${ADDR}" --master_port="${PORT}" \
     llava/train/train_mem.py \
@@ -221,7 +225,7 @@ ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node="${NUM_GPUS}" --nnodes="${NN
 ```
 Alternatively, you can also run the training script:
 ```bash
-bash VisualWebInstruct/MAmmoTH-VL/train/LLaVA-NeXT/scripts/train/mammoth_vl/finetune_visualwebinstruct.sh
+bash scripts/train/mammoth_vl/finetune_visualwebinstruct.sh
 ```
 ### Dataset Configuration
 
@@ -243,6 +247,19 @@ This configuration uses the `$DATA_DIR` environment variable that you set in the
 - Replace placeholder values (indicated by `<...>`) with your actual configuration
 
 ## Evaluation
+
+### Installation
+```base
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv venv eval
+uv venv --python 3.12
+source eval/bin/activate
+cd MAmmoTH-VL/train/LLaVA-NeXT/
+pip install -e .
+cd -
+cd MAmmoTH-VL/eval/lmms-eval
+pip install -e .
+```
 
 ### Setup Environment
 ```bash
