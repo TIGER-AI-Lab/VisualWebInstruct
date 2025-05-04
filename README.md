@@ -259,9 +259,15 @@ uv pip install -e .
 cd -
 cd MAmmoTH-VL/eval/lmms-eval
 uv pip install -e .
+cd -
 ```
 
 ### Setup Environment
+Enter the evaluation folder.
+```bash
+cd MAmmoTH-VL/eval
+```
+
 ```bash
 # Required environment variables
 export HF_HOME=<your_huggingface_cache_path>
@@ -274,9 +280,7 @@ export OUTPUT_PATH=<results_output_path>
 ```
 
 To evaluate the model:
-
 ```bash
-cd VisualWebInstruct/MAmmoTH-VL/eval
 CUDA_VISIBLE_DEVICES=0 accelerate launch --num_processes=1 \
     -m lmms_eval \
     --model llava_onevision \
