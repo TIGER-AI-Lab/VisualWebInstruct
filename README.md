@@ -13,6 +13,10 @@ The official repo for [VisualWebInstruct: Scaling up Multimodal Instruction Data
 <img style="height:22pt" src="https://img.shields.io/badge/-🤗%20Models-red?style=flat">
 </a>
 
+<a target="_blank" href="https://huggingface.co/spaces/TIGER-Lab/MAmmoTH-VL2">
+<img style="height:22pt" src="https://img.shields.io/badge/-🤗%20Demo-red?style=flat">
+</a>
+
 <a target="_blank" href="https://tiger-ai-lab.github.io/VisualWebInstruct/">
 <img style="height:22pt" src="https://img.shields.io/badge/-📝%20Website-red?style=flat">
 </a>
