@@ -4,11 +4,12 @@ dataset_name: vision
 test_split: test
 output_type: generate_until
 doc_to_visual: !function utils.mmmu_pro_doc_to_visual
-doc_to_text: "Write out the multiple-choice question in the image and then solve it. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of options. Think step by step before answering."
+doc_to_text: "First give the reasoning and then write your final answer in the format 'Answer: X' where X is the option's letter from the given choices."
 doc_to_target: "{{answer}}"
 # The return value of process_results will be used by metrics
 process_results: !function utils.mmmu_pro_process_results
-
+generation_kwargs:
+  max_new_tokens: 2048
 metric_list:
   - metric: mmmu_acc
     aggregation: !function utils.mmmu_pro_aggregate_results
