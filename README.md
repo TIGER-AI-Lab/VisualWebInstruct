@@ -270,7 +270,7 @@ Enter the evaluation folder.
 export HF_TOKEN=<your_huggingface_token>
 export OPENAI_API_KEY=<your_openai_api_key>
 export MODEL_PATH=TIGER-Lab/MAmmoTH-VL2
-export TASK_NAME=mmmu_pro_standard
+export TASK_NAME=mmmu_pro_standard_cot
 export OUTPUT_PATH=./log/
 
 export VLLM_WORKER_MULTIPROC_METHOD=spawn
