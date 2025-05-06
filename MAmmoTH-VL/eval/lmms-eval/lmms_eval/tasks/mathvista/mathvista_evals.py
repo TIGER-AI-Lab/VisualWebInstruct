@@ -324,7 +324,7 @@ class MathVistaEvaluator:
 
         elif answer_type == "float":
             try:
-                extraction = str(round(float(extraction), precision))
+                extraction = str(round(float(extraction), int(precision)))
             except:
                 extraction = None
 
@@ -560,9 +560,10 @@ class MathVistaEvaluator:
         else:
             assert shot_type == "code"
             prompt = "Python code: "
-
+        
+        final_prompt = "If it is hard to determine, give the closest answer."
         if shot_type == "reason-first":
-            elements = [hint_text, question_text, choices_text, caption_text, ocr_text, prompt]
+            elements = [question_text, choices_text, caption_text, ocr_text, prompt, hint_text, final_prompt]
             test_query = "\n".join([e for e in elements if e != ""])
         else:
             elements = [question_text, choices_text, caption_text, ocr_text, hint_text, prompt]
