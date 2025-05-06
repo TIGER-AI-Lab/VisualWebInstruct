@@ -171,7 +171,11 @@ wandb login --relogin $WANDB_API_KEY
 ```
 
 ### Run Training
+```bash
+cd train/LLaVA-NeXT
+```
 
+You can run from commandline:
 ```bash
 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node="${NUM_GPUS}" --nnodes="${NNODES}" --node_rank="${RANK}" --master_addr="${ADDR}" --master_port="${PORT}" \
     llava/train/train_mem.py \
@@ -221,7 +225,7 @@ ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node="${NUM_GPUS}" --nnodes="${NN
 ```
 Alternatively, you can also run the training script:
 ```bash
-bash VisualWebInstruct/MAmmoTH-VL/train/LLaVA-NeXT/scripts/train/mammoth_vl/finetune_visualwebinstruct.sh
+bash scripts/train/mammoth_vl/finetune_visualwebinstruct.sh
 ```
 ### Dataset Configuration
 
@@ -244,22 +248,39 @@ This configuration uses the `$DATA_DIR` environment variable that you set in the
 
 ## Evaluation
 
+### Installation
+```base
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv venv eval
+uv venv --python 3.12
+source eval/bin/activate
+cd MAmmoTH-VL/train/LLaVA-NeXT/
+uv pip install -e .
+cd -
+cd MAmmoTH-VL/eval/lmms-eval
+uv pip install -e .
+cd -
+```
+
 ### Setup Environment
+Enter the evaluation folder.
+
 ```bash
 # Required environment variables
-export HF_HOME=<your_huggingface_cache_path>
 export HF_TOKEN=<your_huggingface_token>
-export MLP_WORKER_0_PORT=<worker_port_number>
 export OPENAI_API_KEY=<your_openai_api_key>
-export MODEL_PATH=<model_path_or_huggingface_id>
-export TASK_NAME=<task_name>  
-export OUTPUT_PATH=<results_output_path>
+export MODEL_PATH=TIGER-Lab/MAmmoTH-VL2
+export TASK_NAME=mmmu_pro_standard_cot
+export OUTPUT_PATH=./log/
+
+export VLLM_WORKER_MULTIPROC_METHOD=spawn
+export NCCL_BLOCKING_WAIT=1
+export NCCL_TIMEOUT=18000000
+export NCCL_DEBUG=DEBUG
 ```
 
 To evaluate the model:
-
 ```bash
-cd VisualWebInstruct/MAmmoTH-VL/eval
 CUDA_VISIBLE_DEVICES=0 accelerate launch --num_processes=1 \
     -m lmms_eval \
     --model llava_onevision \
