@@ -9,6 +9,10 @@ The official repo for our EMNLP25 paper [VisualWebInstruct: Scaling up Multimoda
 <img style="height:22pt" src="https://img.shields.io/badge/-🤗%20Dataset-red?style=flat">
 </a>
 
+<a target="_blank" href="https://huggingface.co/datasets/TIGER-Lab/VisualWebInstruct-verified">
+<img style="height:22pt" src="https://img.shields.io/badge/-🤗%20Dataset(verified)-red?style=flat">
+</a>
+
 <a target="_blank" href="https://huggingface.co/TIGER-Lab/MAmmoTH-VL2">
 <img style="height:22pt" src="https://img.shields.io/badge/-🤗%20Models-red?style=flat">
 </a>
@@ -25,7 +29,7 @@ The official repo for our EMNLP25 paper [VisualWebInstruct: Scaling up Multimoda
 
 
 ## Overview
-We utilize Google Search as a tool to augment multimodal reasoning dataset:
+We utilize Google Search as a tool to augment the multimodal reasoning dataset:
 <img width="800" alt="abs" src="teaser.jpg">
 
 
